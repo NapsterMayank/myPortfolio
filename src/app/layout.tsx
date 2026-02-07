@@ -1,3 +1,4 @@
+import { MusicPlayer } from "@/components/MusicPlayer";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -20,6 +21,7 @@ export default function RootLayout({
         className="antialiased bg-black text-white selection:bg-purple-500 selection:text-white"
       >
         {children}
+        <MusicPlayer />
       </body>
     </html>
   );

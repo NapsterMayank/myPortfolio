@@ -26,3 +26,5 @@ body {
 .animate-marquee {
   animation: marquee 25s linear infinite;
 }
+
+.font-handwriting { font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', sans-serif; }
