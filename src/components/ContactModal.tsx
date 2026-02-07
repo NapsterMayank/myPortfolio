@@ -100,18 +100,58 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
             <div className="p-6 md:p-8 space-y-8">
               {/* The Rant Section */}
-              <div className="bg-purple-900/10 border border-purple-500/20 p-5 rounded-lg space-y-4">
+              <div className="bg-purple-900/10 border border-purple-500/20 p-5 rounded-lg space-y-4 min-h-[200px]">
                 <div className="flex items-start gap-3">
                   <AlertCircle className="w-6 h-6 text-purple-400 shrink-0 mt-1" />
                   <div className="space-y-3 text-sm md:text-base text-gray-300">
                     <p className="font-bold text-white">
-                      ⚠️ PROTOCOLS:
+                      {formData.type === 'hiring' && "⚠️ INTERVIEW PROTOCOL:"}
+                      {formData.type === 'freelance' && "⚠️ FREELANCE TERMS:"}
+                      {formData.type === 'idea' && "⚠️ REALITY CHECK:"}
                     </p>
-                    <ul className="list-disc pl-5 space-y-1 text-zinc-400 font-mono text-xs">
-                       <li><strong className="text-purple-400">Recruiters:</strong> If you ask "Where do you see yourself in 5 years?", I will block you. I don't even know what I'm having for dinner.</li>
-                       <li><strong className="text-purple-400">Freelance:</strong> I don't accept "Equity" or "Exposure". My landlord doesn't accept "cool vibes" as rent payment.</li>
-                       <li><strong className="text-purple-400">Idea Guys:</strong> If your pitch is "It's like Tinder for Dogs", I charge a stupidity tax of 200%.</li>
-                    </ul>
+
+                    {formData.type === 'hiring' && (
+                      <div className="space-y-3">
+                        <p>
+                          Do <span className="text-red-400 font-bold decoration-red-500 underline decoration-wavy">NOT</span> ask me about SOLID principles.
+                          I have <span className="text-purple-400 font-bold">3+ years of survival experience</span> across:
+                        </p>
+                        <ul className="list-disc pl-5 space-y-1 text-zinc-400 font-mono text-xs">
+                          <li>Service-based sweatshops (I survived).</li>
+                          <li>Chaotic Startups (I fixed production on Fridays).</li>
+                          <li>Product-based companies (I attended meetings).</li>
+                        </ul>
+                         <p className="italic border-l-2 border-purple-500 pl-3 py-1 bg-purple-500/5">
+                            "This portfolio &gt; Your Resume parsing ATS."
+                         </p>
+                      </div>
+                    )}
+
+                    {formData.type === 'freelance' && (
+                      <div className="space-y-3">
+                        <p>
+                          I deliver exactly what you ask for, plus 20% extra sarcasm.
+                        </p>
+                        <ul className="list-disc pl-5 space-y-1 text-zinc-400 font-mono text-xs">
+                           <li>If you want <strong>shit</strong>, I give you the <strong>worst shit</strong> possible.</li>
+                           <li>If you want <strong>gold</strong>, I'll deliver <strong>diamond</strong> (and charge accordingly).</li>
+                           <li>No "exposure" bucks. My landlord doesn't accept "good vibes".</li>
+                        </ul>
+                      </div>
+                    )}
+
+                     {formData.type === 'idea' && (
+                      <div className="space-y-3">
+                        <p>
+                          I will listen to your "Next Facebook" idea, but I have conditions.
+                        </p>
+                        <ul className="list-disc pl-5 space-y-1 text-zinc-400 font-mono text-xs">
+                           <li>I will sign your NDA (No One Cares Agreement).</li>
+                           <li>If it's "Uber for Hamsters", I'm doubling my rate.</li>
+                           <li>I build MVP (Minimum Viable Product), not MFP (Maximum Fantasy Project).</li>
+                        </ul>
+                      </div>
+                    )}
 
                     <div className="mt-4 p-3 bg-red-950/30 border border-red-500/30 rounded text-xs text-red-200">
                       <p className="font-bold flex items-center gap-2">
