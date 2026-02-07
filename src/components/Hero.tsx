@@ -22,7 +22,7 @@ export function Hero() {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
-    <section className="min-h-[90vh] flex flex-col justify-center items-center text-center px-4 relative overflow-hidden">
+    <section className="min-h-[90vh] flex flex-col justify-center items-center text-center px-4 relative overflow-hidden pt-32 md:pt-0">
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
       
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px] pointer-events-none" />
@@ -37,15 +37,15 @@ export function Hero() {
           ⚠ Warning: Ego overflow detected
         </div>
         
-        <h1 className="text-7xl md:text-[10rem] font-black tracking-tighter mb-6 text-white leading-none">
+        <h1 className="text-5xl sm:text-7xl md:text-[10rem] font-black tracking-tighter mb-6 text-white leading-none">
           THE REAL <br/>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-purple-600 animate-gradient bg-[length:200%_auto]">
             BELUGA
           </span>
         </h1>
 
-        <p className="text-sm md:text-base text-purple-400 font-mono mb-4 tracking-widest uppercase">
-          Created by <span className="font-bold text-white border-b-2 border-purple-500">Mayank Sharma</span> (The Real Human)
+        <p className="text-xs sm:text-sm md:text-base text-purple-400 font-mono mb-4 tracking-widest uppercase">
+          Created by <span className="font-bold text-white border-b-2 border-purple-500">Mayank Sharma</span> (THE REAL BELUGA)
         </p>
         
         <p className="text-xl md:text-3xl text-gray-400 font-mono mb-10 max-w-3xl mx-auto leading-relaxed">

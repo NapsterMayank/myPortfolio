@@ -121,7 +121,7 @@ export function MusicPlayer() {
 
   return (
 
-    <div className="fixed top-24 left-4 z-50 group flex items-start gap-4">
+    <div className="fixed bottom-4 left-4 md:top-24 md:bottom-auto md:left-4 z-50 group flex items-center md:items-start gap-4">
       {/* Floating Notes Container */}
       <div className="absolute top-0 left-4 pointer-events-none">
         <AnimatePresence>
