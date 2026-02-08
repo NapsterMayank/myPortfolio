@@ -17,7 +17,10 @@ export function ClickMe() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, scale: 0.8, x: -20 }}
             whileHover={{ scale: 1.1, rotate: 5 }}
-            onClick={() => setClicked(true)}
+            onClick={() => {
+                setClicked(true);
+                window.dispatchEvent(new Event("play-music"));
+            }}
             className="cursor-pointer group flex items-center gap-3"
           >
              <span className="font-handwriting text-2xl text-white -rotate-12 group-hover:text-purple-400 transition-colors">

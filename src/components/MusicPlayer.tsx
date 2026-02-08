@@ -22,42 +22,44 @@ export function MusicPlayer() {
 
   // Initial Auto-play attempt & Interaction Fallback
   useEffect(() => {
-    const startAudio = () => {
+    const startAudio = async () => {
       if (audioRef.current) {
-        const playPromise = audioRef.current.play();
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              setIsPlaying(true);
-            })
-            .catch((error) => {
-              // Auto-play was prevented. This is expected behavior.
-              // We swallow the error to keep the console clean and wait for interaction.
-              setIsPlaying(false);
-            });
+        try {
+          await audioRef.current.play();
+          setIsPlaying(true);
+          // Only remove listeners if play succeeded
+          cleanupListeners();
+        } catch (error) {
+          console.log("Autoplay blocked, waiting for interaction");
+          setIsPlaying(false);
         }
       }
     };
 
-    const handleInteraction = () => {
-      // If already playing, do nothing
-      if (audioRef.current && !audioRef.current.paused) return;
-
-      startAudio();
-      
-      // Remove listeners after first successful interaction trigger
-      document.removeEventListener('click', handleInteraction);
-      document.removeEventListener('keydown', handleInteraction);
-      document.removeEventListener('scroll', handleInteraction);
+    const cleanupListeners = () => {
+        document.removeEventListener('click', handleInteraction);
+        document.removeEventListener('keydown', handleInteraction);
+        document.removeEventListener('scroll', handleInteraction);
+        window.removeEventListener('play-music', handleInteraction);
     };
 
-    // Try immediate play (some browsers allow it if user has visited before)
+    const handleInteraction = () => {
+      if (audioRef.current && !audioRef.current.paused) return;
+      startAudio();
+    };
+
+    // Try immediate play
     startAudio();
 
-    // Add fallback listeners for ANY interaction
+    // Add listeners
     document.addEventListener('click', handleInteraction);
     document.addEventListener('keydown', handleInteraction);
     document.addEventListener('scroll', handleInteraction);
+    window.addEventListener('play-music', handleInteraction);
+
+    return () => {
+      cleanupListeners();
+    };
 
     return () => {
       document.removeEventListener('click', handleInteraction);
