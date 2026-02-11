@@ -13,6 +13,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const [formData, setFormData] = useState({
     name: "",
     company: "",
+    contact: "",
     salary: "",
     message: "",
     type: "hiring"
@@ -44,7 +45,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
         setTimeout(() => {
           onClose();
           setStatus('idle');
-          setFormData({ name: "", company: "", salary: "", message: "", type: "hiring" });
+          setFormData({ name: "", company: "", contact: "", salary: "", message: "", type: "hiring" });
         }, 2000);
       } else {
         setStatus('error');
@@ -57,13 +58,13 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
       if (formData.type === "freelance") {
         subject = `Freelance Inquiry from ${formData.name}`;
-            body = `Name: ${formData.name}%0D%0AProject Type: Freelance/Contract%0D%0ABudget: ${formData.salary}%0D%0A%0D%0ADetails:%0D%0A${formData.message}%0D%0A%0D%0APS: I know you're expensive, but I'm desperate.`;
+            body = `Name: ${formData.name}%0D%0AContact: ${formData.contact}%0D%0AProject Type: Freelance/Contract%0D%0ABudget: ${formData.salary}%0D%0A%0D%0ADetails:%0D%0A${formData.message}%0D%0A%0D%0APS: I know you're expensive, but I'm desperate.`;
       } else if (formData.type === "idea") {
             subject = `Collaboration App Idea from ${formData.name}`;
-            body = `Name: ${formData.name}%0D%0AType: "The Next Big Thing"%0D%0AEquity/Budget: ${formData.salary}%0D%0A%0D%0APitch:%0D%0A${formData.message}%0D%0A%0D%0APS: I will sign an NDA if you promise to actually build it.`;
+            body = `Name: ${formData.name}%0D%0AContact: ${formData.contact}%0D%0AType: "The Next Big Thing"%0D%0AEquity/Budget: ${formData.salary}%0D%0A%0D%0APitch:%0D%0A${formData.message}%0D%0A%0D%0APS: I will sign an NDA if you promise to actually build it.`;
       } else {
             subject = `Hiring Inquiry from ${formData.name} (${formData.company})`;
-            body = `Name: ${formData.name}%0D%0ACompany: ${formData.company}%0D%0ASalary Budget: ${formData.salary}%0D%0A%0D%0AMessage:%0D%0A${formData.message}%0D%0A%0D%0APS: I promise not to ask about SOLID principles.`;
+            body = `Name: ${formData.name}%0D%0AContact: ${formData.contact}%0D%0ACompany: ${formData.company}%0D%0ASalary Budget: ${formData.salary}%0D%0A%0D%0AMessage:%0D%0A${formData.message}%0D%0A%0D%0APS: I promise not to ask about SOLID principles.`;
       }
       window.location.href = `mailto:support@therealbeluga.com?subject=${subject}&body=${body}`;
       setStatus('idle');
@@ -215,6 +216,17 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                       onChange={e => setFormData({...formData, company: e.target.value})}
                     />
                   </div>
+                </div>
+
+                <div className="space-y-1">
+                  <label className="text-xs font-mono text-gray-500 uppercase">Contact Info</label>
+                  <input 
+                    required
+                    type="text" 
+                    placeholder="Email / Phone Number" 
+                    className="w-full bg-zinc-950 border border-zinc-800 focus:border-purple-500 rounded p-3 text-white outline-none transition-colors"
+                    onChange={e => setFormData({...formData, contact: e.target.value})}
+                  />
                 </div>
 
                 <div className="space-y-1">
