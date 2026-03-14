@@ -67,6 +67,13 @@ const projects: Project[] = [
     description: "Accounting & Ledger App. Currently absolute vaporware.",
     sarcasticComment: "It's not 'missing features', it's 'pre-alpha minimalism'.",
     roast: "Currently existing only in my VS Code and my dreams."
+  },
+  {
+    title: "VibeLeet",
+    url: "https://vibeleet.xyz",
+    description: "The coding platform for developers who care more about the aesthetic than the actual solution.",
+    sarcasticComment: "Finally, a way to fail LeetCode with absolute style and zero stress.",
+    roast: "Optimized for maximum vibes and minimum efficiency. Because O(n) is just a suggestion."
   }
 ];
 
