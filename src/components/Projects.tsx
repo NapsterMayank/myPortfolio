@@ -62,11 +62,32 @@ const projects: Project[] = [
     roast: "The definition of insanity is applying via Workday twice."
   },
    {
-    title: "ExtinctBook.com (Coming Soon)",
+    title: "ExtinctBook.com",
+    url: "https://extinctbook.com",
+    description: "Accounting & Ledger App for businesses still using Excel in 2025.",
+    sarcasticComment: "Making bookkeeping slightly less soul-destroying since launch.",
+    roast: "It's alive. Unlike your QuickBooks subscription you forgot to cancel."
+  },
+  {
+    title: "BabyCorp",
     url: "#",
-    description: "Accounting & Ledger App. Currently absolute vaporware.",
-    sarcasticComment: "It's not 'missing features', it's 'pre-alpha minimalism'.",
-    roast: "Currently existing only in my VS Code and my dreams."
+    description: "Early childhood sports platform. Swimming, gymnastics, chess for 0-5 year olds.",
+    sarcasticComment: "Competitive parenting as a SaaS. Subscriptions start before teething.",
+    roast: "Rs. 15,000/month so your 8-month-old can lose at chess to a 3-year-old. Worth it."
+  },
+  {
+    title: "Unspiral (Coming Soon)",
+    url: "#",
+    description: "Stop overthinking in 90 seconds. Interrupt-first mental wellness for Android.",
+    sarcasticComment: "Therapy was ₹5,000/hr. This is ₹999/yr. Math did the heavy lifting.",
+    roast: "Uncensored AI mode exists because sometimes you need brutal honesty, not a hug."
+  },
+  {
+    title: "Kudieko.dev (Coming Soon)",
+    url: "#",
+    description: "Ad platform serving sponsored lines inside AI coding tools during agent idle time.",
+    sarcasticComment: "Monetizing the 40 seconds you spend staring at a spinner. You're welcome.",
+    roast: "kickbacks.ai does this with Firebase and manual payout reviews. That's not a competitor, that's a cry for help."
   },
   {
     title: "VibeLeet",
