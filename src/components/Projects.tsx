@@ -11,90 +11,114 @@ interface Project {
   roast: string;
 }
 
-const projects: Project[] = [
+interface ProjectCategory {
+  label: string;
+  subtitle: string;
+  projects: Project[];
+}
+
+const categories: ProjectCategory[] = [
   {
-    title: "Crackalot.co",
-    url: "https://crackalot.co",
-    description: "Resume builder, cover letters, interview prep.",
-    sarcasticComment: "Helping you gaslight recruiters professionally.",
-    roast: "Because your actual skills aren't getting you hired."
-  },
-  {
-    title: "SaaS Info",
-    url: "https://saasinfo.in",
-    description: "Promoting Micro SaaS products.",
-    sarcasticComment: "A directory for products nobody asked for.",
-    roast: "Where 'Hello World' apps go to die."
-  },
-  {
-    title: "Site Sentinel",
-    url: "https://sitesentinel.therealbeluga.com",
-    description: "Security project fetching domain records.",
-    sarcasticComment: "Stalking DNS records because I have no hobbies.",
-    roast: "It's not 'hacking', it's just 'reading public data very aggressively'."
-  },
-  {
-    title: "LazyCall.io",
-    url: "https://lazycall.io",
-    description: "Automatic calling AI agent.",
-    sarcasticComment: "Automating human interaction because people exceed my RAM.",
-    roast: "For when you want to annoy leads at scale."
-  },
-  {
-    title: "AdWithChatGPT",
-    url: "https://adwithchatgpt.com",
-    description: "SEO, Geo, AIO agent services.",
-    sarcasticComment: "Using AI to game Google's AI. It's stupider than it sounds.",
-    roast: "SEO: Snake Oil Optimization."
-  },
-  {
-    title: "Tinder Maker Yojna",
-    url: "#",
-    description: "Automated dating application helper.",
-    sarcasticComment: "Government subsidies for getting no play?",
-    roast: "Because your personality needs a backend update."
-  },
-   {
-    title: "Job Dhundho Yojna",
-    url: "#",
-    description: "Job finding automation.",
-    sarcasticComment: "Applying to 500 jobs to get rejected by 501.",
-    roast: "The definition of insanity is applying via Workday twice."
-  },
-   {
-    title: "ExtinctBook.com",
-    url: "https://extinctbook.com",
-    description: "Accounting & Ledger App for businesses still using Excel in 2025.",
-    sarcasticComment: "Making bookkeeping slightly less soul-destroying since launch.",
-    roast: "It's alive. Unlike your QuickBooks subscription you forgot to cancel."
-  },
-  {
-    title: "BabyCorp",
-    url: "#",
-    description: "Early childhood sports platform. Swimming, gymnastics, chess for 0-5 year olds.",
-    sarcasticComment: "Competitive parenting as a SaaS. Subscriptions start before teething.",
-    roast: "Rs. 15,000/month so your 8-month-old can lose at chess to a 3-year-old. Worth it."
-  },
-  {
-    title: "Unspiral (Coming Soon)",
-    url: "#",
-    description: "Stop overthinking in 90 seconds. Interrupt-first mental wellness for Android.",
-    sarcasticComment: "Therapy was ₹5,000/hr. This is ₹999/yr. Math did the heavy lifting.",
-    roast: "Uncensored AI mode exists because sometimes you need brutal honesty, not a hug."
+    label: "LIVE — Beating Elon in Just 1 Year (If I Get Funding)",
+    subtitle: "Running in production. Somehow. Don't jinx it.",
+    projects: [
+      {
+        title: "Crackalot.co",
+        url: "https://crackalot.co",
+        description: "Resume builder, cover letters, interview prep.",
+        sarcasticComment: "Helping you gaslight recruiters professionally.",
+        roast: "Because your actual skills aren't getting you hired."
+      },
+      {
+        title: "SaaS Info",
+        url: "https://saasinfo.in",
+        description: "Promoting Micro SaaS products.",
+        sarcasticComment: "A directory for products nobody asked for.",
+        roast: "Where 'Hello World' apps go to die."
+      },
+      {
+        title: "Site Sentinel",
+        url: "https://sitesentinel.therealbeluga.com",
+        description: "Security project fetching domain records.",
+        sarcasticComment: "Stalking DNS records because I have no hobbies.",
+        roast: "It's not 'hacking', it's just 'reading public data very aggressively'."
+      },
+      {
+        title: "LazyCall.io",
+        url: "https://lazycall.io",
+        description: "Automatic calling AI agent.",
+        sarcasticComment: "Automating human interaction because people exceed my RAM.",
+        roast: "For when you want to annoy leads at scale."
+      },
+      {
+        title: "AdWithChatGPT",
+        url: "https://adwithchatgpt.com",
+        description: "SEO, Geo, AIO agent services.",
+        sarcasticComment: "Using AI to game Google's AI. It's stupider than it sounds.",
+        roast: "SEO: Snake Oil Optimization."
+      },
+      {
+        title: "ExtinctBook.com",
+        url: "https://extinctbook.com",
+        description: "Accounting & Ledger App for businesses still using Excel in 2025.",
+        sarcasticComment: "Making bookkeeping slightly less soul-destroying since launch.",
+        roast: "It's alive. Unlike your QuickBooks subscription you forgot to cancel."
+      },
+      {
+        title: "BabyCorp",
+        url: "#",
+        description: "Early childhood sports platform. Swimming, gymnastics, chess for 0-5 year olds.",
+        sarcasticComment: "Structured sports for humans who still need help using a spoon.",
+        roast: "Nothing says 'I believe in you' like chess lessons for someone with 4 teeth."
+      },
+      {
+        title: "VibeLeet",
+        url: "https://vibeleet.xyz",
+        description: "The coding platform for developers who care more about the aesthetic than the actual solution.",
+        sarcasticComment: "Finally, a way to fail LeetCode with absolute style and zero stress.",
+        roast: "Optimized for maximum vibes and minimum efficiency. Because O(n) is just a suggestion."
+      }
+    ]
   },
   {
-    title: "Kudieko.dev (Coming Soon)",
-    url: "#",
-    description: "Ad platform serving sponsored lines inside AI coding tools during agent idle time.",
-    sarcasticComment: "Monetizing the 40 seconds you spend staring at a spinner. You're welcome.",
-    roast: "kickbacks.ai does this with Firebase and manual payout reviews. That's not a competitor, that's a cry for help."
+    label: "IN DEV — On My Way to Beat Elon (Just Need 1 More npm install)",
+    subtitle: "Coming soon. Probably. Don't hold your breath.",
+    projects: [
+      {
+        title: "Unspiral",
+        url: "#",
+        description: "Stop overthinking in 90 seconds. Interrupt-first mental wellness for Android.",
+        sarcasticComment: "Your therapist charges ₹5,000/hr. We charge ₹999/yr. One of us respects your time.",
+        roast: "Uncensored mode will say what your friends think but are too polite to tell you. You asked for it."
+      },
+      {
+        title: "Kudieko.dev",
+        url: "#",
+        description: "Ad platform serving sponsored lines inside AI coding tools during agent idle time.",
+        sarcasticComment: "Someone has to monetize the void between your prompts. Might as well be you.",
+        roast: "We put ads in your terminal. This is fine. Everything is fine."
+      }
+    ]
   },
   {
-    title: "VibeLeet",
-    url: "https://vibeleet.xyz",
-    description: "The coding platform for developers who care more about the aesthetic than the actual solution.",
-    sarcasticComment: "Finally, a way to fail LeetCode with absolute style and zero stress.",
-    roast: "Optimized for maximum vibes and minimum efficiency. Because O(n) is just a suggestion."
+    label: "SHUT DOWN — Broke AF, API Costs Won",
+    subtitle: "RIP. Killed by my own AWS bill. Pour one out.",
+    projects: [
+      {
+        title: "Tinder Maker Yojna",
+        url: "#",
+        description: "Automated dating application helper.",
+        sarcasticComment: "Government subsidies for getting no play?",
+        roast: "Because your personality needs a backend update."
+      },
+      {
+        title: "Job Dhundho Yojna",
+        url: "#",
+        description: "Job finding automation.",
+        sarcasticComment: "Applying to 500 jobs to get rejected by 501.",
+        roast: "The definition of insanity is applying via Workday twice."
+      }
+    ]
   }
 ];
 
@@ -111,47 +135,58 @@ export function Projects() {
           Things I built instead of going to therapy.
         </p>
       </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <motion.a
-            key={index}
-            href={project.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ y: -10, rotate: 1 }}
-            className="group relative flex flex-col p-8 bg-zinc-950 border border-zinc-800 hover:border-purple-500 transition-all rounded-none shadow-[10px_10px_0px_0px_rgba(39,39,42,0.5)] hover:shadow-[10px_10px_0px_0px_rgba(168,85,247,0.5)]"
-          >
-            <div className="absolute top-0 right-0 p-4 opacity-50 group-hover:opacity-100 transition-opacity">
-              <ExternalLink className="w-6 h-6 text-gray-400 group-hover:text-purple-400" />
-            </div>
-            
-            <h3 className="text-3xl font-black text-white mb-3 uppercase tracking-tight group-hover:text-purple-400 transition-colors">
-              {project.title}
+
+      {categories.map((category, catIndex) => (
+        <div key={catIndex} className="mb-20">
+          <div className="mb-8">
+            <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight">
+              {category.label}
             </h3>
-            
-            <p className="text-gray-400 mb-6 font-mono text-sm border-l border-zinc-700 pl-3">
-              {project.description}
-            </p>
-            
-            <div className="mt-auto space-y-3">
-              <div className="p-3 bg-zinc-900/50 rounded border border-zinc-800/50">
-                 <p className="text-xs font-mono text-purple-300">
-                  <span className="text-purple-600 select-none">$ comment: </span> 
-                  {project.sarcasticComment}
+            <p className="text-sm text-gray-500 font-mono mt-1">{category.subtitle}</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {category.projects.map((project, index) => (
+              <motion.a
+                key={index}
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -10, rotate: 1 }}
+                className="group relative flex flex-col p-8 bg-zinc-950 border border-zinc-800 hover:border-purple-500 transition-all rounded-none shadow-[10px_10px_0px_0px_rgba(39,39,42,0.5)] hover:shadow-[10px_10px_0px_0px_rgba(168,85,247,0.5)]"
+              >
+                <div className="absolute top-0 right-0 p-4 opacity-50 group-hover:opacity-100 transition-opacity">
+                  <ExternalLink className="w-6 h-6 text-gray-400 group-hover:text-purple-400" />
+                </div>
+                
+                <h3 className="text-3xl font-black text-white mb-3 uppercase tracking-tight group-hover:text-purple-400 transition-colors">
+                  {project.title}
+                </h3>
+                
+                <p className="text-gray-400 mb-6 font-mono text-sm border-l border-zinc-700 pl-3">
+                  {project.description}
                 </p>
-              </div>
-              
-              <div className="p-3 bg-red-950/20 rounded border border-red-900/20 group-hover:border-red-500/50 transition-colors">
-                 <p className="text-xs font-bold font-mono text-red-400 flex items-center gap-2">
-                  <Flame className="w-3 h-3" />
-                  ROAST: {project.roast}
-                </p>
-              </div>
-            </div>
-          </motion.a>
-        ))}
-      </div>
+                
+                <div className="mt-auto space-y-3">
+                  <div className="p-3 bg-zinc-900/50 rounded border border-zinc-800/50">
+                     <p className="text-xs font-mono text-purple-300">
+                      <span className="text-purple-600 select-none">$ comment: </span> 
+                      {project.sarcasticComment}
+                    </p>
+                  </div>
+                  
+                  <div className="p-3 bg-red-950/20 rounded border border-red-900/20 group-hover:border-red-500/50 transition-colors">
+                     <p className="text-xs font-bold font-mono text-red-400 flex items-center gap-2">
+                      <Flame className="w-3 h-3" />
+                      ROAST: {project.roast}
+                    </p>
+                  </div>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      ))}
     </section>
   );
 }
